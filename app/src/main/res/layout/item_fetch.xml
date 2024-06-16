@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/idLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toEndOf="@id/idLabelTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/listIdCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFCDD2"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/listIdLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="12dp"
+                    android:paddingVertical="4dp"
+                    android:text="List ID:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/listIdTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@id/listIdLabelTextView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/nameLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Name:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idTextView" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/nameLabelTextView"
+            app:layout_constraintTop_toBottomOf="@id/idTextView"
+            tools:text="Item Name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
