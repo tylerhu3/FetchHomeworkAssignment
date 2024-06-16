@@ -5,6 +5,13 @@ Introduction
 Simple app that takes in a JSON from https://fetch-hiring.s3.amazonaws.com/hiring.json and displays
 it in a RecyclerView. App is made following the MVVM pattern.
 
+Building App
+--- 
+Download this repo and in Android Studio: File --> New --> Import Project. This hit the Play Button
+to install on emulator/device. This was created with Android Studio Jellyfish 2023.3.1, if you are 
+using a different version, it be necessary to change the agp version from libs.versions.toml look 
+for variable "agp = "8.4.0"".
+
 Architectural Specifics
 --- 
 App Icon: For a bit of fun, I added Fetch app's icon with the word "HOMEWORK" on it.
