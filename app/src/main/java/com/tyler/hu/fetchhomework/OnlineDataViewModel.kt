@@ -21,7 +21,7 @@ class OnlineDataViewModel : ViewModel() {
         try {
             _items.value = OnlineDataRepository().getItems()
         } catch (e: Exception) {
-            _error.value = e.message
+            _error.value = "Error: ${e::class.qualifiedName} ${e.message} \n\n Pull down to Retry"
         } finally {
             _isLoading.value = false
         }
