@@ -23,7 +23,7 @@ It will first separate them by listId groups and then sort each group by name. I
 responsibility is to return a sorted Map<Int, List<FetchItem>> where FetchItem is the JSON
 Data structure and the Int is our listId. Each list of FetchItem is sorted by name in typical
 lexicographic order, so "Item 4999" will come before "Item 50". The instructions didn't specify
-numeric order, so I assume that are expecting lexicographic order.
+numeric order, so I assume they are expecting lexicographic order.
 
 View: activity_main.xml / MainActivity is our View, it takes from the ViewModel and shows what's
 necessary, this is also where the RecyclerView lives. This will show a loading indicator while the
@@ -33,9 +33,8 @@ data
 one more time. I have a separate version of this on branch "SwipeUpAndSpecificError" that uses the
 swipe gesture to refresh and also show the entire error but I found that to be not as intuitive.
 
-ViewModel: OnlineDataViewModel gets data from OnlineDataRepository and also keeps track of errors,
-loading data, the actual data itself which is all contained in Flows(Kotlin's prefer
-observer/subscriber
+ViewModel: OnlineDataViewModel gets data from OnlineDataRepository and also keeps track of error,
+loading data, the actual data itself which is all contained in Flows(Kotlin's observer/subscriber 
 implementation).
 
 Testing
