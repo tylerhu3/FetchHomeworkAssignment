@@ -20,8 +20,6 @@ class OnlineDataRepository {
             val listId = jsonObject.getInt("listId")
             val name = jsonObject.getString("name")
             // Only add to the list if the name is not blank or null
-            println("TYLER:: ID: $id, ListID: $listId, Name: $name")
-            println("TYLER:: name.isNotBlank(): ${name.isNotBlank()} && name.lowercase(): ${name.lowercase()}")
             if (name.isNotBlank() && name.lowercase() != "null") {
                 val fetchItem = FetchItem(id, listId, name)
                 fetchItems.add(fetchItem)
@@ -36,13 +34,6 @@ class OnlineDataRepository {
             items.sortedBy { it.name }
         }
 
-        sortedItems.forEach { (listId, items) ->
-            println("TYLER:: ListID: $listId")
-            items.forEach { item ->
-                println("TYLER:: ID: ${item.id}, Name: ${item.name}")
-            }
-            println()
-        }
         sortedItems
     }
 }
