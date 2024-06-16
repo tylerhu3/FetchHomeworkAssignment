@@ -11,26 +11,28 @@ App Icon: For a bit of fun, I added Fetch app's icon with the word "HOMEWORK" on
 
 Following the MVVM pattern, we have the following files + responsibilities:
 
-Model:OnlineDataRepository, retrieves the json data and is only used by OnlineDataViewModel.
-It will first separate them by listId groups and then sort each group by name. It's main 
+Model: OnlineDataRepository, retrieves the json data and is only used by OnlineDataViewModel.
+It will first separate them by listId groups and then sort each group by name. It's main
 responsibility is to return a sorted Map<Int, List<FetchItem>> where FetchItem is the JSON
 Data structure and the Int is our listId. Each list of FetchItem is sorted by name in typical
 lexicographic order, so "Item 4999" will come before "Item 50". The instructions didn't specify
-numeric order, so I assume that are expecting lexicographic order. 
+numeric order, so I assume that are expecting lexicographic order.
 
 View: activity_main.xml / MainActivity is our View, it takes from the ViewModel and shows what's
 necessary, this is also where the RecyclerView lives. This will show a loading indicator while the
-app is retrieving the JSON data and I also added a pull down ability to refresh the, list,
-This is somewhat standard in most apps and I found it useful when I ran into a network issue.
-I also print the error on this screen if there was some error getting the network data. I borrow the
-error icon from freepik.com which is free.
+app is retrieving the JSON data. If for some reason, there is a error, the user will be greeted with
+a "Error Occurred, Check Internet Connection" and a "Try Again" button which will try to load the
+data
+one more time. I have a separate version of this on branch "SwipeUpAndSpecificError" that uses the
+swipe gesture to refresh and also show the entire error but I found that to be not as intuitive.
 
 ViewModel: OnlineDataViewModel gets data from OnlineDataRepository and also keeps track of errors,
-loading data, the actual data itself which is all contained in Flows(Kotlin's prefer observer/subscriber
-implementation). 
+loading data, the actual data itself which is all contained in Flows(Kotlin's prefer
+observer/subscriber
+implementation).
 
 Testing
 ---
-This was tested using a Pixel 6a Emulator running Android 14 SDK 34 and again on a Amazon Fire 
+This was tested using a Pixel 6a Emulator running Android 14 SDK 34 and again on a Amazon Fire
 Tablet running Android 9. The main noticeable different between the two is that Android 14 has a
 default splash screen showing the icon I added to this app. 
