@@ -22,7 +22,8 @@ View: activity_main.xml / MainActivity is our View, it takes from the ViewModel 
 necessary, this is also where the RecyclerView lives. This will show a loading indicator while the
 app is retrieving the JSON data and I also added a pull down ability to refresh the, list,
 This is somewhat standard in most apps and I found it useful when I ran into a network issue.
-I also print the error on this screen if there was some error getting the network data.
+I also print the error on this screen if there was some error getting the network data. I borrow the
+error icon from freepik.com which is free.
 
 ViewModel: OnlineDataViewModel gets data from OnlineDataRepository and also keeps track of errors,
 loading data, the actual data itself which is all contained in Flows(Kotlin's prefer observer/subscriber
