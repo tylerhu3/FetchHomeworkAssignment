@@ -82,6 +82,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchData() {
+        if(onlineDataViewModel.dataAlreadyRetrieved.value) {
+            return
+        }
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
                 onlineDataViewModel.fetchData()
